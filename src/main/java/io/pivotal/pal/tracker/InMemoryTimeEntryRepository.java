@@ -27,7 +27,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
     }
 
     public TimeEntry update(long id, TimeEntry timeEntry) {
-        TimeEntry entry = timeEntries.get(id);
+        TimeEntry entry = find(id);
         if(entry != null ) {
             entry.setDate(timeEntry.getDate());
             entry.setHours(timeEntry.getHours());
